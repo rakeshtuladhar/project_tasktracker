@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'app_tasktracker',
 ]
 
 MIDDLEWARE = [
@@ -47,7 +48,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'app_tasktracker',
+   
 ]
 
 ROOT_URLCONF = 'project_tasktracker.urls'
@@ -75,12 +76,20 @@ WSGI_APPLICATION = 'project_tasktracker.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+    #'default': {
+    #    'ENGINE': 'django.db.backends.sqlite3',
+    #    'NAME': BASE_DIR / 'db.sqlite3',
+    # }
 
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'project_tasktracker', # database name
+        'HOST': 'localhost', # database servername
+        'USER': 'root',
+        'PASSWPRD': '',
+        'PORT': '3306'
+        }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
